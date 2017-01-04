@@ -51,4 +51,13 @@ There are 5 parts:
 * Merges datasets, then subsets and labels the merged dataset.
 * Extracts the means and standard deviations into the new dataset.
 
+## Instruction
 
+1. Open file ("run_analysis.R")
+2. Run '''  source("run_analysis.R")  ''',
+3. Type ''' Merge() '''
+I will generate a new folder "UCI HAR Dataset" in your working directory and a file ```tidydata.txt``` in this folder
+
+## Dependencies
+
+```run_analysis.R``` file will help you to install the dependencies automatically. 
