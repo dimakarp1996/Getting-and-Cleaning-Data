@@ -1,6 +1,11 @@
 
   Merge<-function()#проблема - массивы с ускорением при таком считывании становятся разной размерности 
   {
+    URL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    dir<-paste(getwd(),"/a.zip",sep="")#get url
+    download.file(URL,dir)#upload file
+    unzip(dir)#unzip file
+    setwd(".\\UCI HAR Dataset")
     X_train<-read.table( ".\\train\\X_train.txt",  sep = "", fill=TRUE)
     X_test<-read.table( ".\\test\\X_test.txt",  sep = "", fill=TRUE)
     Y_train<-read.table( ".\\train\\Y_train.txt",  sep = " ", fill=TRUE)
@@ -28,5 +33,5 @@
    Frame2[j,]<-c(colMeans(Frame3[[j]][,1:79]),Frame3[[j]]$Activity[1],Frame3[[j]]$Subject[1])
   }
   #making a new dataset Frame2 with variable means split by activity and subject
-  write.table(Frame2,"tidydata.txt",sep="\t",row.names = FALSE)
+  write.table(Frame2,".\\tidydata.txt",sep="\t",row.names = FALSE)
   }
